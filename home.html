@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frelally Dulce - Home</title>
+  <link rel="stylesheet" href="sample.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container">
+      <div class="branding">
+
+        <h1 id="title">Frelally Dulce</h1>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Promos</a></li>
+          <li><a href="#">Franchising</a></li>
+          <li><a href="#">Careers</a></li>
+         
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Delight in Every Bite</h1>
+      <p>Sweets Crafted to Perfection</p>
+      <a href="reg.html" class="btn">Order Now</a>
+    </div>
+  </section>
+
+  <script>
+    const heroSection = document.getElementById('hero');
+    const images = ['s1.jpg', 's2.jpg', 's3.jpg']; 
+    let currentIndex = 0;
+  
+    function changeBackground() {
+      heroSection.style.backgroundImage = `url('${images[currentIndex]}')`;
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+  
+    changeBackground();
+    setInterval(changeBackground, 3000);
+  </script>
+    
+  <section class="featured-products">
+    <h2>Featured Selections</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="pics-cake/cake2.png" alt="Mango Bravo" />
+        <h3>Mango Bravo</h3>
+      </div>
+      <div class="product-card">
+        <img src="pics-donut/d4.png" alt="Pink Swirl Dream" />
+        <h3>Pink Swirl Dream</h3>
+      </div>
+      <div class="product-card">
+        <img src="pics-pastry/p9.png" alt="Savory Garden Twist" />
+        <h3>Mini Cinnamon Bites</h3>
+      </div>
+      <div class="product-card">
+        <img src="pics-pasta/ps (4).png" alt="Spaghetti with Zucchini and Pesto" />
+        <h3>Spaghetti with Zucchini and Pesto</h3>
+      </div>
+    </div>
+  </section>
+
+<section class="flavor-pagination">
+    <h2>Explore Our Menu</h2>
+    <ul class="pagination">
+      <li><a href="cake.html">CAKE</a></li>
+      <li><a href="donut.html">DONUT</a></li>
+      <li><a href="pastry.html">PASTRY</a></li>
+      <li><a href="pasta.html">PASTA</a></li>
+      <li><a href="coffee.html">BEVERAGE</a></li>
+    </ul>
+  </section>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-section">
+        <h4>About Us</h4>
+        <p>At Frelally Dulce, we bring sweetness to your celebrations with our handcrafted delights.</p>
+      </div>
+  
+      <div class="footer-section">
+        <h4>Contact Us</h4>
+        <p>Facebook: Frelally Dulce</p>
+        <p>Email: frelallydulce.com</p>
+        <p>Phone: +63 976 636 3235</p>
+      </div>
+    </div>
+    <div class="footer-bottom" style="text-align: center;">
+      <br>
+      <p>&copy; Frelally Dulce. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

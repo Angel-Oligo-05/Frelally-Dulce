@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Georgia', sans-serif;
+    line-height: 1.6;
+    background-color: #f5dada5d;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+.navbar {
+  background-color: #fb9292;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.branding {
+  display: flex;
+  align-items: left;
+}
+
+#title {
+  font-family: 'Georgia', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 100 200 #333;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  
+}
+
+.nav-links a:hover {
+    color: #d0494e;
+  }
+  
+  .hero {
+    
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  
+  }
+  
+  .hero-content {
+    background-color: rgba(119, 26, 26, 0.467);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 0px;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btn {
+    background-color: #fb9292;
+    color: #efe8e8;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .btn:hover {
+    background-color: #d0494e;
+  }
+  
+  .featured-products {
+    padding: 4rem 0;
+    text-align: center;
+  }
+  
+  .featured-products h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #d0494e;
+  }
+  
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    justify-content: center;
+  }
+  
+  .product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 30px;
+    padding: 1rem;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(100, 17, 17, 0.171);
+  }
+  
+  .product-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  .product-card h3 {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .footer {
+    background-color: #dc4453b0;
+    color: #fff;
+    padding: 2rem 0;
+  }
+
+  .footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+    min-width: 200px;
+    
+  }
+  
+  .footer-section h4 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color:
+  ::contentReference[oaicite:0]{index=0}
+  }
+  
+.footer .container p{
+  text-align: center;
+}
+
+.flavor-pagination {
+    text-align: center;
+    padding: 3rem 0;
+    background-color: #fff0e6;
+  }
+
+  .flavor-pagination h2 {
+    color: #d0494e;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+  
+  .pagination {
+    list-style: none;
+    display: inline-flex;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .pagination li a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fb9292;
+    color: #ffffff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 20px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination li a:hover {
+    background-color: #d0494e;
+  }
+  
+  .flavor-pagination {
+    position: relative;
+    padding-bottom: 60px; 
+  }
+  
+  .back-button {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .back-button .btn {
+    background-color: #fb9292;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button .btn:hover {
+    background-color: #d0494e;
+  }
+
+  .page-arrows {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .arrow-btn {
+    display: inline-block;
+    font-size: 30px;
+    margin: 0 20px;
+    color: #ff69b4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .arrow-btn:hover {
+    color: #ff1493;
+  }
+  
+  .pagination a {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #333;
+    background-color: #f0f0f0;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination a:hover {
+    background-color: #ffe4e1;
+  }
+  
+  .pagination a.active {
+    background-color: #ff4d91;
+    color: white;
+    font-weight: bold;
+  }
+
+  .hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+  }
+  

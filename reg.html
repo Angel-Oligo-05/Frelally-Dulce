@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frelally Dulce - Customer Registration</title>
+  <link rel="stylesheet" href="sample.css" />
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+      color: #333;
+    }
+
+    .overlay {
+      background-color: rgba(239, 232, 232, 0.9);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d0494e;
+      margin-top: 2rem;
+      font-size: 3rem;
+    }
+
+    h3 {
+      text-align: center;
+      color: #d0494e;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+
+    .form-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(208, 73, 78, 0.3);
+      border: 2px solid #fb9292;
+    }
+
+    form {
+      width: 100%;
+    }
+
+    fieldset {
+      border: 2px solid #fb9292;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #fb9292;
+      font-size: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: 'Georgia', serif;
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .form-buttons .right-buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .form-buttons button,
+    .form-buttons a {
+      background-color: #fb9292;
+      color: #fff;
+      padding: 0.5rem 1.1rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .form-buttons button:hover,
+    .form-buttons a:hover {
+      background-color: #d0494e;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 5px;
+      display: none;
+    }
+
+    #successModal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.129);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #successModal .modal-content {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      font-family: 'Georgia', serif;
+    }
+
+    #successModal .modal-content h2 {
+      color: #d0494e;
+      margin-bottom: 1rem;
+    }
+
+    #successModal .modal-content button {
+      background-color: #fb9292;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #successModal .modal-content button:hover {
+      background-color: #d0494e;
+    }
+
+    #blankError {
+      color: red;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      display: none;
+      text-align: center;
+    }
+
+    .invalid {
+      border-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Frelally Dulce</h1>
+    <h3>Customer Registration & Billing</h3>
+
+    <div class="form-container">
+      <form id="registrationForm" action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Customer Registration</legend>
+          <label for="fullname">Full Name:</label>
+          <input type="text" id="fullname" name="fullname" required />
+
+          <label for="email">Email Address:</label>
+          <input type="email" id="email" name="email" required />
+          <div id="emailError" class="error">Please enter a valid email address.</div>
+
+          <label for="phone">Phone Number:</label>
+          <input type="tel" id="phone" name="phone" required />
+          <div id="phoneError" class="error">Enter valid PH phone number (e.g., 09XXXXXXXXX or +639XXXXXXXXX).</div>
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <label for="confirm-password">Confirm Password:</label>
+          <input type="password" id="confirm-password" name="confirm-password" required />
+          <div id="passwordError" class="error">Passwords do not match.</div>
+
+          <p>Gender:</p>
+          <label><input type="radio" name="gender" value="male" required /> Male</label>
+          <label><input type="radio" name="gender" value="female" required /> Female</label>
+          <label><input type="radio" name="gender" value="other" required /> Other</label>
+
+          <label for="dob">Date of Birth:</label>
+          <input type="date" id="dob" name="dob" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Billing Information</legend>
+          <label for="address">Billing Address:</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+
+          <label for="product">Product Name:</label>
+          <input type="text" id="product" name="product" required />
+
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" min="1" required />
+
+          <label for="price">Price per Unit (₱):</label>
+          <input type="number" id="price" name="price" min="0" step="0.01" required />
+
+          <label for="payment">Payment Method:</label>
+          <select id="payment" name="payment" required>
+            <option value="">--Select Payment Method--</option>
+            <option value="credit">Credit Card</option>
+            <option value="paypal">PayPal</option>
+            <option value="bank">Bank Transfer</option>
+          </select>
+        </fieldset>
+
+        <div class="form-buttons">
+          <a href="home.html">← Home</a>
+          <div class="right-buttons">
+            <button type="button">Calculate Total</button>
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+          </div>
+        </div>
+
+        <div id="blankError">All fields must be completed.</div>
+      </form>
+    </div>
+  </div>
+
+  <div id="successModal">
+    <div class="modal-content">
+      <h2>Registration Successful!</h2>
+      <p>Your order has been successfully completed.</p>
+      <button onclick="document.getElementById('successModal').style.display='none'">Close</button>
+    </div>
+  </div>
+
+  <script>
+    
+    const images = ['s1.jpg', 's2.jpg', 's3.jpg'];
+    let currentIndex = 0;
+
+    function changeBackground() {
+      document.body.style.backgroundImage = `url('${images[currentIndex]}')`;
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    changeBackground();
+    setInterval(changeBackground, 3000);
+
+    const form = document.getElementById('registrationForm');
+
+    form.addEventListener('submit', function(event) {
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirm-password');
+      const passwordError = document.getElementById('passwordError');
+
+      const phone = document.getElementById('phone');
+      const phoneError = document.getElementById('phoneError');
+      const phoneRegex = /^(09\d{9}|\+639\d{9})$/;
+
+      const email = document.getElementById('email');
+      const emailError = document.getElementById('emailError');
+
+      const blankError = document.getElementById('blankError');
+
+      let valid = true;
+
+      if (password.value !== confirmPassword.value) {
+        passwordError.style.display = 'block';
+        valid = false;
+      } else {
+        passwordError.style.display = 'none';
+      }
+
+      if (!phoneRegex.test(phone.value)) {
+        phoneError.style.display = 'block';
+        valid = false;
+      } else {
+        phoneError.style.display = 'none';
+      }
+
+      if (!email.validity.valid) {
+        emailError.style.display = 'block';
+        valid = false;
+      } else {
+        emailError.style.display = 'none';
+      }
+
+      const requiredFields = form.querySelectorAll('[required]');
+      let anyBlank = false;
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          field.classList.add('invalid');
+          anyBlank = true;
+          valid = false;
+        } else {
+          field.classList.remove('invalid');
+        }
+      });
+
+      blankError.style.display = anyBlank ? 'block' : 'none';
+
+      if (!valid) {
+        event.preventDefault();
+      } else {
+        event.preventDefault();
+        document.getElementById('successModal').style.display = 'flex';
+      }
+    });
+  </script>
+</body>
+</html>
